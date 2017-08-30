@@ -8,7 +8,7 @@ def attacker_decision(name_of_gladiator):
         decision = input(attack_choices)
         if decision in ['N', 'M', 'C', 'U', 'H', 'S']:
             return decision
-        elif decision == 'Q':
+        elif decision.upper() == 'Q'.upper():
             print('Gladiator {} has quit'.format(name_of_gladiator))
             exit()
         print('INVALID CHOICE')
@@ -16,21 +16,20 @@ def attacker_decision(name_of_gladiator):
 
 def gladiator_fight(attacker, defender):
     battle_choice = attacker_decision(attacker.name)
-    if battle_choice.lower() == 'N'.lower():
+    if battle_choice.upper() == 'N'.upper():
         message = attacker.normal_punch(defender)
         print(message)
-    elif battle_choice.lower() == 'M'.lower():
+    elif battle_choice.upper() == 'M'.upper():
         attacker.mega_kick(defender)
-        print('\nMega kicked for a damage of 25')
-    elif battle_choice.lower() == 'U'.lower():
+    elif battle_choice.upper() == 'U'.upper():
         attacker.hard_uppercut(defender)
         print('\nHard Uppercut for damage of 35')
-    elif battle_choice.lower() == 'C'.lower():
-        attacker.cut()
-    elif battle_choice.lower() == 'H'.lower():
+    elif battle_choice.upper() == 'C'.upper():
+        defender.cut()
+    elif battle_choice.upper() == 'H'.upper():
         attacker.heal()
         print('\nHealth +5')
-    elif battle_choice.lower() == 'S'.lower():
+    elif battle_choice.upper() == 'S'.upper():
         attacker.skip()
         print('\nSkipped turn. +20 Rage')
     if defender.is_dead():
