@@ -34,7 +34,7 @@ class Gladiator:
         """ (Gladiator) kicks for a damage of 25 when rage is 40"""
         if self.rage >= 40:
             other.health -= 25
-            self.rage = 0
+            self.rage -= 40
 
     def hard_uppercut(self, other):
         """ (Gladiator) sacrafices 35 health to uppercut for a damage of 35"""
